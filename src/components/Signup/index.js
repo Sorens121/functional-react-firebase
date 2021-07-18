@@ -1,13 +1,13 @@
 import React, {useRef, useState} from 'react';
 
-import { useAuth } from '../Context/AuthContext';
+import { useAuth } from '../../Context/AuthContext';
 
 function Signup() {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const confirmPassRef = useRef()
+    const email = useRef()
+    const password = useRef()
+    const confirmPassword = useRef()
 
-    const { signup, currentUser } = useAuth()
+    const { signup } = useAuth()
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
@@ -16,37 +16,37 @@ function Signup() {
         e.preventDefault()
 
         //Validations
-        if(passwordRef.current.value !== confirmPassRef.current.value){
-            return setError('Password donot match')
+        if(password.current.value !== confirmPassword.current.value){
+            return setError('Password do not match')
         }
 
         try{
             setError('')
             setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
+            await signup(email.current.value, password.current.value)
         }
         catch {
             setError('Failed to create an account')
         }
-
+        
+        //console.log(email, password, confirmPassword)
         setLoading(false)
     }
 
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
-                <h2>Sign Up</h2>
-                {JSON.stringify(currentUser)}
+                <h2 style={{'textAlign': 'center'}}>Sign Up</h2>
                 {error && <div className="error-message">{error}</div>}
 
                 <label>Email</label>
-                <input type="email" ref={emailRef} required />
+                <input type="email" ref={email} />
                 
                 <label>Password</label>
-                <input type="password" ref={passwordRef} required/>
+                <input type="password" ref={password} />
                 
                 <label>Confirm Password</label>
-                <input type="password" ref={confirmPassRef}/>
+                <input type="password" ref={confirmPassword}/>
 
                 <button disabled={loading} type="submit">Sign Up</button>
             </form>

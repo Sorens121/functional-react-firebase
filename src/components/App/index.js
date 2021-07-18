@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthProvider } from '../Context/AuthContext';
+import { AuthProvider } from '../../Context/AuthContext';
 import Signup from '../Signup'
 
 function App() {

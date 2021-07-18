@@ -1,3 +1,7 @@
+h1, h2, h3, h4,h5, p, a {
+  font-family: sans-serif;
+}
+
 .container {
   position: absolute;
   width: 300px;
@@ -69,7 +73,7 @@ form > button:disabled {
   height: 30px;
   background-color: #ffcccc;
   text-align: center;
-  padding-top: 8px;
+  padding: 6px 0;
   color: #ff1a1a;
   font-size: 14px;
   border: 1px solid #ffb3b3;
