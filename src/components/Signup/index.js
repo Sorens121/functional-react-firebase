@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react';
+import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../Context/AuthContext';
 
@@ -51,7 +52,7 @@ function Signup() {
                 <button disabled={loading} type="submit">Sign Up</button>
             </form>
             <div className="link-container">
-                <p>Already have an Account? Sign-In</p>
+                <p>Already have an Account?<Link to="/login">Sign-In</Link></p>
             </div>
         </div>
     )

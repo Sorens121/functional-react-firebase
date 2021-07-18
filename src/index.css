@@ -1,5 +1,11 @@
 h1, h2, h3, h4,h5, p, a {
   font-family: sans-serif;
+  text-decoration: none;
+}
+
+a {
+  color: blue;
+  font-weight: 550;
 }
 
 .container {
@@ -16,7 +22,7 @@ h1, h2, h3, h4,h5, p, a {
 }
 
 form {
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   padding: 0 15px;
@@ -65,7 +71,7 @@ form > button:disabled {
   font-size: 16px;
   font-family: sans-serif;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 50px;
 }
 
 .error-message {
